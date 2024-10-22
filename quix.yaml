@@ -10,3 +10,4 @@ deployments: []
 # This section describes the Topics of the data pipeline
 topics:
   - name: option-trades
+  - name: option_trades
