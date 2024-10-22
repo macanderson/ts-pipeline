@@ -11,3 +11,8 @@ deployments: []
 topics:
   - name: option-trades
   - name: option_trades
+    configuration:
+      partitions: 4
+      replicationFactor: 3
+      retentionInMinutes: 60
+      retentionInBytes: 52428800
