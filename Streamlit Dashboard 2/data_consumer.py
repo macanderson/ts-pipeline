@@ -14,7 +14,7 @@ class DataConsumer():
 
         self.queue = queue
         self.data = []
-        self.app = Application.Quix(auto_offset_reset="latest")
+        self.app = Application.Quix(auto_offset_reset="earliest")
         self.consumer = self.app.get_consumer()
         self.topic_name = os.environ["input"]
         self.topic = self.app.topic(self.topic_name)
