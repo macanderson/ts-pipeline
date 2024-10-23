@@ -15,8 +15,3 @@ topics:
       replicationFactor: 3
       retentionInMinutes: 60
       retentionInBytes: 52428800
-  - name: option_trade_aggs
-    configuration:
-      replicationFactor: 3
-      retentionInMinutes: 1440
-      retentionInBytes: 52428800
