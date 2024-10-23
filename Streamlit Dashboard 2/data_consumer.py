@@ -36,11 +36,11 @@ class DataConsumer():
             while self.run:
                 msg = self.consumer.poll(timeout=1.0)
                 if msg is not None:
+                    print(msg.value())
                     # Decode the message data from bytes to string
-                    message_data = msg.value().decode('utf-8')
+                    message_data = msg.value()
                     # Convert the string to a dictionary
                     data_dict = json.loads(message_data)
-
                     # Now you can check for the timestamp column in data_dict
                     # but first lets work out what the timestamp column is called
                     timestamp_column_options = ["timestamp", "Timestamp", "time", "ts"]
