@@ -1,0 +1,34 @@
+# Quix Project Descriptor
+# This file describes the data pipeline and configuration of resources of a Quix Project.
+
+metadata:
+  version: 1.0
+
+# This section describes the Deployments of the data pipeline
+deployments:
+  - name: Streamlit Dashboard
+    application: Streamlit Dashboard
+    version: latest
+    deploymentType: Service
+    resources:
+      cpu: 200
+      memory: 200
+      replicas: 1
+    publicAccess:
+      enabled: true
+      urlPrefix: streamlit
+    variables:
+      - name: input
+        inputType: InputTopic
+        description: Name of the input topic to listen to.
+        required: true
+        value: option_trades
+
+# This section describes the Topics of the data pipeline
+topics:
+  - name: option_trades
+    configuration:
+      partitions: 4
+      replicationFactor: 3
+      retentionInMinutes: -1
+      retentionInBytes: -1
