@@ -5,24 +5,7 @@ metadata:
   version: 1.0
 
 # This section describes the Deployments of the data pipeline
-deployments:
-  - name: Streamlit Dashboard
-    application: Streamlit Dashboard 2
-    version: latest
-    deploymentType: Service
-    resources:
-      cpu: 200
-      memory: 200
-      replicas: 1
-    publicAccess:
-      enabled: true
-      urlPrefix: streamlit
-    variables:
-      - name: input
-        inputType: InputTopic
-        description: Name of the input topic to listen to.
-        required: true
-        value: option_trades
+deployments: []
 
 # This section describes the Topics of the data pipeline
 topics:
